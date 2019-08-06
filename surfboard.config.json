@@ -1,0 +1,29 @@
+{
+    "ride_directory": "ride",
+    "test_directory": "test",
+    "envs": {
+        "devnet": {
+            "API_BASE": "https://devnet-aws-ir-2.wavesnodes.com/",
+            "CHAIN_ID": "D",
+            "SEED": "YOUR DEV NET SEED",
+            "timeout": 60000
+        },
+        "testnet": {
+            "API_BASE": "https://testnodes.wavesnodes.com/",
+            "CHAIN_ID": "T",
+            "SEED": "YOUR TEST NET SEED",
+            "timeout": 60000
+        },
+        "mainnet": {
+            "API_BASE": "https://nodes.wavesnodes.com/",
+            "CHAIN_ID": "W",
+            "SEED": "YOUR MAIN NET SEED",
+            "timeout": 60000
+        }
+       
+    },
+    "defaultEnv": "testnet",
+    "mocha": {
+        "timeout": 60000
+    }
+}

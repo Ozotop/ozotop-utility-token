@@ -1,0 +1,12 @@
+{-# STDLIB_VERSION 3 #-}
+{-# CONTENT_TYPE EXPRESSION #-}
+{-# SCRIPT_TYPE ACCOUNT #-}
+
+let dataUnfreeze = 1722632401000
+let companyAddress = Address(base58'3PGpmm5DLM4f8DyKrGQfh2MQDHDQXhYsUwY')
+match (tx) {  
+    case t: TransferTransaction => 
+        t.timestamp > dataUnfreeze && t.recipient == companyAddress
+    case _ =>
+        false
+}

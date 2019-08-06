@@ -1,0 +1,22 @@
+{-# STDLIB_VERSION 3 #-}
+{-# CONTENT_TYPE DAPP #-}
+{-# SCRIPT_TYPE ACCOUNT #-}
+
+@Callable(i)
+func setEndPresellTime(time: Int) = {
+    if (i.caller == this) then
+      WriteSet([
+          DataEntry("endPresellTime", time)
+      ])
+    else
+       throw("Only owner can set presell time.")  
+}
+@Callable(i)
+func setTokenId(id: String) = {
+    if (i.caller == this) then
+      WriteSet([
+          DataEntry("tokenId", id)
+      ])
+    else
+       throw("Only owner can set token id.")  
+}
